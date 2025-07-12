@@ -91,4 +91,3 @@ class CarModel(models.Model):
                 name='unique_model_year'
             )
         ]
-    
