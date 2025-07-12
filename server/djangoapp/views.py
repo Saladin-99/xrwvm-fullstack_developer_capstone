@@ -155,10 +155,10 @@ def add_review(request):
                 },
                 status=400)
 
-        name = {
-                    request.user.get_full_name().strip()
-                    or request.user.username
-                }
+        name = (
+                request.user.get_full_name().strip()
+                or request.user.username
+            )
 
         review_data = {
             "id": data.get('id', ""),
