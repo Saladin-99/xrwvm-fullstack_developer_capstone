@@ -149,9 +149,17 @@ def add_review(request):
 
         if not all(field in data for field in required_fields):
             return JsonResponse(
-                {"status": 400, "message": "Missing required fields"}, status=400)
+                {
+                    "status": 400,
+                    "message": "Missing required fields"
+                },
+                status=400)
 
-        name = request.user.get_full_name().strip() or request.user.username
+        name = {
+                    request.user.get_full_name().strip()
+                    or request.user.username
+                }
+
         review_data = {
             "id": data.get('id', ""),
             "name": name,
@@ -172,7 +180,10 @@ def add_review(request):
                 "message": "Review added successfully",
                 "review_id": str(response['_id'])
             })
-        error_msg = response.get('error', 'Failed to add review') if response else 'No response'
+        error_msg = {
+                        response.get('error', 'Failed to add review') 
+                        if response else 'No response'
+                    }
         return JsonResponse(
             {"status": 400, "message": error_msg}, status=400)
     except json.JSONDecodeError:
