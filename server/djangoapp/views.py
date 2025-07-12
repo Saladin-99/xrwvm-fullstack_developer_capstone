@@ -41,7 +41,7 @@ def registration(request):
     last_name = data['lastName']
     email = data['email']
     username_exist = False
-    
+
     try:
         User.objects.get(username=username)
         username_exist = True
@@ -83,9 +83,13 @@ def get_cars(request):
 
 def get_dealerships(request, state="All"):
     try:
-        endpoint = "/fetchDealers" if state == "All" else f"/fetchDealers/{state}"
+        endpoint = (
+                        "/fetchDealers"
+                        if state == "All"
+                        else f"/fetchDealers/{state}"
+                    )
         dealerships = get_request(endpoint)
-        
+
         if isinstance(dealerships, list):
             return JsonResponse({"status": 200, "dealers": dealerships})
         return JsonResponse(
@@ -99,7 +103,7 @@ def get_dealer_details(request, dealer_id):
     try:
         endpoint = f"/fetchDealer/{dealer_id}"
         dealer = get_request(endpoint)
-        
+
         if dealer:
             return JsonResponse({"status": 200, "dealer": dealer})
         return JsonResponse(
@@ -113,7 +117,7 @@ def get_dealer_reviews(request, dealer_id):
     try:
         endpoint = f"/fetchReviews/dealer/{dealer_id}"
         reviews = get_request(endpoint)
-        
+
         if isinstance(reviews, list):
             for review in reviews:
                 if 'review' in review:
@@ -134,19 +138,19 @@ def add_review(request):
     if request.method != "POST":
         return JsonResponse(
             {"status": 405, "message": "Method not allowed"}, status=405)
-    
+
     try:
         if not request.user.is_authenticated:
             return JsonResponse(
                 {"status": 401, "message": "Unauthorized"}, status=401)
-        
+
         data = json.loads(request.body)
         required_fields = ['dealership', 'review', 'purchase']
-        
+
         if not all(field in data for field in required_fields):
             return JsonResponse(
                 {"status": 400, "message": "Missing required fields"}, status=400)
-        
+
         name = request.user.get_full_name().strip() or request.user.username
         review_data = {
             "id": data.get('id', ""),
@@ -159,9 +163,9 @@ def add_review(request):
             "car_model": data.get('car_model', ""),
             "car_year": data.get('car_year', ""),
         }
-        
+
         response = post_review(review_data)
-        
+
         if response and '_id' in response:
             return JsonResponse({
                 "status": 200,
