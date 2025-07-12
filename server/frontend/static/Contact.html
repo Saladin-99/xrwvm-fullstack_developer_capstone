@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Best Cars Dealership</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link.active {
+            font-weight: bold;
+            color: white !important;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+        
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-control {
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .business-hours li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <h2 style="margin: 0;">Best Cars Dealership</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4">We'd Love to Hear From You</h1>
+            <p class="lead">Our team is always ready to assist with your automotive needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="container mb-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-card card h-100 text-center p-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Auto Plaza Drive<br>
+                    Motor City, MC 48000<br>
+                    United States</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-card card h-100 text-center p-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Sales: (800) 555-1234<br>
+                    Service: (800) 555-5678<br>
+                    Fax: (800) 555-9012</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-card card h-100 text-center p-4">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Sales: sales@bestcars.com<br>
+                    Service: service@bestcars.com<br>
+                    Support: help@bestcars.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="container mb-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="contact-form">
+                    <h2 class="mb-4">Send Us a Message</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                        <input type="tel" class="form-control" placeholder="Phone Number">
+                        <select class="form-control">
+                            <option>Select Department</option>
+                            <option>Sales</option>
+                            <option>Service</option>
+                            <option>Parts</option>
+                            <option>General Inquiry</option>
+                        </select>
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215209060518!2d-73.98784492423976!3d40.74844097138978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="min-height: 400px; border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="card contact-card">
+                    <div class="card-body">
+                        <h2 class="mb-4">Business Hours</h2>
+                        <ul class="list-unstyled business-hours">
+                            <li class="d-flex justify-content-between">
+                                <span>Monday</span>
+                                <span>9:00 AM - 8:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Tuesday</span>
+                                <span>9:00 AM - 8:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Wednesday</span>
+                                <span>9:00 AM - 8:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Thursday</span>
+                                <span>9:00 AM - 8:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Saturday</span>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Best Cars Dealership. All rights reserved.</p>
+            <div class="social-icons mt-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="/static/bootstrap.bundle.min.js"></script>
+</body>
+</html>

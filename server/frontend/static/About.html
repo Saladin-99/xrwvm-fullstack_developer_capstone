@@ -1,68 +1,145 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        .team-card {
+            transition: transform 0.3s;
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .banner {
+            background: linear-gradient(135deg, #007bff 0%, #00b4ff 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0;
+        }
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .team-container {
+            justify-content: center;
+            padding: 20px 0;
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        .mission-section {
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        .title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+    </style>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-    <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2c3e50;">
+            <div class="container-fluid">
+                <h2 style="padding-right: 5%; margin: 0; color: white;">Best Cars Dealership</h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid p-0">
+            <div class="banner text-center">
+                <h1 class="display-4">About Best Cars</h1>
+                <p class="lead">Your trusted automotive partner since 1985</p>
+            </div>
+            
+            <div class="container my-5">
+                <div class="row team-container">
+                    <div class="col-md-4">
+                        <div class="card team-card h-100">
+                            <img class="card-img-top" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="CEO">
+                            <div class="card-body">
+                                <h5 class="title">Michael Johnson</h5>
+                                <p class="text-muted">CEO & Founder</p>
+                                <p class="card-text">With 30+ years in the automotive industry, Michael founded Best Cars with a vision to create a transparent, customer-first dealership experience.</p>
+                                <p class="text-primary">michael.johnson@bestcars.com</p>
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
+                    <div class="col-md-4">
+                        <div class="card team-card h-100">
+                            <img class="card-img-top" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sales Director">
+                            <div class="card-body">
+                                <h5 class="title">Sarah Williams</h5>
+                                <p class="text-muted">Sales Director</p>
+                                <p class="card-text">Sarah leads our sales team with a focus on building lasting customer relationships and ensuring everyone drives away completely satisfied.</p>
+                                <p class="text-primary">sarah.williams@bestcars.com</p>
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+                    <div class="col-md-4">
+                        <div class="card team-card h-100">
+                            <img class="card-img-top" src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Service Manager">
+                            <div class="card-body">
+                                <h5 class="title">David Chen</h5>
+                                <p class="text-muted">Service Manager</p>
+                                <p class="card-text">David oversees our state-of-the-art service centers, ensuring every vehicle receives expert care from our certified technicians.</p>
+                                <p class="text-primary">david.chen@bestcars.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mission-section py-5">
+                <div class="container text-center">
+                    <h2 class="mb-4">Our Commitment to You</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="h4 text-primary">Quality</div>
+                            <p>Every vehicle undergoes a 150-point inspection before being offered for sale</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="h4 text-primary">Transparency</div>
+                            <p>No hidden fees, no pressure tactics - just honest car buying</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="h4 text-primary">Service</div>
+                            <p>24/7 roadside assistance for all vehicles purchased from us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
     </div>
     
-</div>
-
+    <!-- Bootstrap JS -->
+    <script src="/static/bootstrap.bundle.min.js"></script>
+</body>
 </html>
