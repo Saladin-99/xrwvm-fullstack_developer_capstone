@@ -181,7 +181,7 @@ def add_review(request):
                 "review_id": str(response['_id'])
             })
         error_msg = {
-                        response.get('error', 'Failed to add review') 
+                        response.get('error', 'Failed to add review')
                         if response else 'No response'
                     }
         return JsonResponse(
